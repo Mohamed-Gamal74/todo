@@ -1,0 +1,118 @@
+h2 {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.todoContainer {
+  background-color: var(--dark-light);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.todoContainer.todoContainer--light {
+  background-color: var(--white);
+}
+
+.borderBottom {
+  border-bottom: 1px solid var(--white-light);
+}
+
+.itemContainer {
+  cursor: move;
+  background-color: var(--dark-light);
+  color: var(--white);
+}
+
+.itemContainer.light {
+  background-color: var(--white);
+  color: var(--dark);
+}
+
+.itemContainerNotDrag {
+  cursor: default;
+  background-color: var(--dark-light);
+  color: var(--white);
+}
+
+.itemContainerNotDrag.light {
+  background-color: var(--white);
+  color: var(--dark);
+}
+
+.itemContainer .delete {
+  cursor: pointer;
+}
+
+.itemContainer .delete:hover {
+  filter: invert(1);
+}
+
+i {
+  font-size: 0.8rem;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+i:hover {
+  opacity: 1;
+}
+
+.sandClock {
+  width: 40px;
+}
+
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+    0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.example-box:last-child {
+  border: none;
+}
+
+.example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.complete {
+  background-color: #139e2f;
+  color: #fff;
+  opacity: 1;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+::ng-deep .snackbarDelete.mat-mdc-snack-bar-container .mdc-snackbar__surface {
+  background: var(--linear-color) !important;
+  color: var(--white) !important;
+}
+
+@media screen and (max-width: 820px) {
+  .todoContainer {
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .todoContainer {
+    margin-bottom: 50px;
+  }
+}

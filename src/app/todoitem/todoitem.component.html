@@ -1,0 +1,96 @@
+<section class="container py-5">
+  <div cdkDropListGroup class="row text-center">
+    <div class="col-md-4">
+      <h2 style="background: var(--linear-color)">Todo</h2>
+
+      <div
+        cdkDropList
+        #todoList="cdkDropList"
+        [cdkDropListData]="todo"
+        (cdkDropListDropped)="drop($event)"
+        class="todoContainer"
+        [ngClass]="{ 'todoContainer--light': isLight }"
+      >
+        <div
+          class="d-flex align-items-center justify-content-between itemContainer borderBottom p-2 mb-3"
+          *ngFor="let item of todo"
+          cdkDrag
+          [class.light]="isLight"
+        >
+          <p class="text-capitalize mb-0">{{ item.description }}</p>
+          <div class="d-flex align-items-center">
+            <i
+              (click)="editTodo(item)"
+              class="bi bi-pencil-square mb-0 me-3"
+            ></i>
+            <img
+              (click)="removeTodoHandler(item)"
+              src="../../assets/images/icon-cross.svg"
+              alt="cross"
+              class="delete"
+            />
+          </div>
+        </div>
+
+        <p *ngIf="todo.length === 0" class="text-capitalize mb-0">
+          There are no tasks yet , add now!
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <h2 style="background: #f19428">In Progress</h2>
+
+      <div
+        [style]="inProgressList.length === 0 ? 'background: transparent' : ''"
+        cdkDropList
+        #progressList="cdkDropList"
+        [cdkDropListData]="inProgressList"
+        (cdkDropListDropped)="drop($event)"
+        class="todoContainer"
+        [ngClass]="{ 'todoContainer--light': isLight }"
+      >
+        <div
+          class="d-flex align-items-center justify-content-between itemContainer borderBottom p-2 mb-3"
+          *ngFor="let item of inProgressList"
+          [class.light]="isLight"
+          cdkDrag
+        >
+          <p class="text-capitalize mb-0">{{ item.description }}</p>
+          <img
+            src="../../assets/images/sand.png"
+            alt="sand clock
+          "
+
+          class="sandClock"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <h2 style="background: #139e2f">Completed</h2>
+
+      <div
+        [style]="completedList.length === 0 ? 'background: transparent' : ''"
+        cdkDropList
+        #doneList="cdkDropList"
+        [cdkDropListData]="completedList"
+        (cdkDropListDropped)="drop($event)"
+        class="todoContainer"
+        [ngClass]="{ 'todoContainer--light': isLight }"
+      >
+        <div
+          class="d-flex align-items-center justify-content-between itemContainerNotDrag borderBottom p-2 mb-3"
+          *ngFor="let item of completedList"
+          [class.light]="isLight"
+        >
+          <p class="text-capitalize mb-0">{{ item.description }}</p>
+          <div class="d-flex align-items-center">
+            <i class="bi bi-check-lg complete"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,32 @@
+<section
+  [ngClass]="{ 'section--light': isLight }"
+  class="w-100 d-flex flex-column align-items-center justify-content-center"
+>
+  <div class="section__top d-flex justify-content-between align-items-center">
+    <h1 class="mb-0 text-white">T O D O</h1>
+    <img
+      *ngIf="!isLight"
+      (click)="changeBackground()"
+      class="icon"
+      src="../../assets/images/icon-sun.svg"
+      alt="sun"
+    />
+    <img
+      *ngIf="isLight"
+      (click)="changeBackground()"
+      class="icon"
+      src="../../assets/images/icon-moon.svg"
+      alt="moon"
+    />
+  </div>
+
+  <div class="input__container">
+    <input
+      (keyup.enter)="addTodo($event)"
+      type="text"
+      placeholder="Create a new todo..."
+      [(ngModel)]="todo"
+      [ngClass]="{ 'input--light': isLight }"
+    />
+  </div>
+</section>

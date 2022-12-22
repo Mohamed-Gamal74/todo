@@ -1,0 +1,31 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  /* background-color: var(--dark); */
+}
+
+:root {
+  --linear-color: linear-gradient(#57ddff, #c058f3);
+  --blue: hsl(220, 98%, 61%);
+  --dark: hsl(235, 21%, 11%);
+  --dark-light: hsl(235, 24%, 19%);
+  --white: #fff;
+  --white-light: hsl(233, 14%, 35%);
+}
+
+
+html {
+  font-size: 18px;
+}
+
+li {
+  list-style: none;
+}
