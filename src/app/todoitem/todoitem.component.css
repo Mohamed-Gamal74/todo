@@ -1,7 +1,4 @@
-h2 {
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-}
+
 
 .todoContainer {
   background-color: var(--dark-light);
@@ -11,6 +8,13 @@ h2 {
   width: 100%;
   max-width: 500px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  min-height: 65px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.todoContainer::-webkit-scrollbar {
+  width: 0
 }
 
 .todoContainer.todoContainer--light {

@@ -6,5 +6,5 @@
 
 .app.app--light {
   background-color: var(--white);
-  color: var(--dark-light);
+  color: #474747;
 }

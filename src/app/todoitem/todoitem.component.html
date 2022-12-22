@@ -1,7 +1,7 @@
 <section class="container py-5">
-  <div cdkDropListGroup class="row text-center">
+  <div cdkDropListGroup class="row">
     <div class="col-md-4">
-      <h2 style="background: var(--linear-color)">Todo</h2>
+      <h2>Todo</h2>
 
       <div
         cdkDropList
@@ -32,17 +32,15 @@
           </div>
         </div>
 
-        <p *ngIf="todo.length === 0" class="text-capitalize mb-0">
+        <p *ngIf="todo.length === 0" class="text-capitalize mb-0 text-center">
           There are no tasks yet , add now!
         </p>
       </div>
     </div>
 
     <div class="col-md-4">
-      <h2 style="background: #f19428">In Progress</h2>
-
+      <h2>In Progress</h2>
       <div
-        [style]="inProgressList.length === 0 ? 'background: transparent' : ''"
         cdkDropList
         #progressList="cdkDropList"
         [cdkDropListData]="inProgressList"
@@ -69,10 +67,9 @@
     </div>
 
     <div class="col-md-4">
-      <h2 style="background: #139e2f">Completed</h2>
+      <h2>Completed</h2>
 
       <div
-        [style]="completedList.length === 0 ? 'background: transparent' : ''"
         cdkDropList
         #doneList="cdkDropList"
         [cdkDropListData]="completedList"
