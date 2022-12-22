@@ -1,2 +1,2 @@
-# todo
-drag &amp; drop todo app using angular 
+# Todo
+Drag &amp; Drop Todo App using Angular 
